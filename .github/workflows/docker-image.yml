@@ -20,9 +20,3 @@ jobs:
       - name: docker build Dockerfile-tools
         run: |
           docker build -t my-nodejs-application-tools -f Dockerfile-tools .
-
-      - name: docker push
-        run: |
-          docker push my-nodejs-application
-          docker push my-nodejs-application-run
-          docker push my-nodejs-application-tools
