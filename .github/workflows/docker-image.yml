@@ -1,0 +1,28 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: docker build Dockerfile
+        run: |
+          docker build -t my-nodejs-application -f Dockerfile .
+      - name: docker build Dockerfile-run
+        run: |
+          docker build -t my-nodejs-application-run -f Dockerfile-run .
+      - name: docker build Dockerfile-tools
+        run: |
+          docker build -t my-nodejs-application-tools -f Dockerfile-tools .
+
+      - name: docker push
+        run: |
+          docker push my-nodejs-application
+          docker push my-nodejs-application-run
+          docker push my-nodejs-application-tools
