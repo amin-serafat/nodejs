@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: privet
+        run: |
+          pwd
       - name: docker build Dockerfile
         run: |
           docker build -t my-nodejs-application -f Dockerfile .
