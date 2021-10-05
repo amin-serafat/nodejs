@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: privet
+      - name: prive
         run: |
           pwd
       - name: docker build Dockerfile
